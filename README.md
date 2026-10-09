@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/33236421/README.md)
-# 9.10.-Programm-anas-EDD# 
+# 9.10.# 
 Programmēšanas un algoritmu ĢEDD
 
 **Datums:** 09.10.2026.  
