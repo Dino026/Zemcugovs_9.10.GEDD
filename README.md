@@ -238,6 +238,17 @@ Izvēlies vienu no 4.–9. uzdevuma. ĢEDD pierādījumiem jābūt divos failos:
 ## 1. Programmas apraksts
 
 Norādi faila nosaukumu, ievadi, sagaidāmo rezultātu un īsi paskaidro algoritma darbības.
+Fails: 04_summa_lidz_n.py
+
+
+Ievade: pozitīvs vesels skaitlis n.
+Sagaidāmais rezultāts: visu skaitļu summa no 1 līdz n.
+
+Programma pārbauda, vai n ir lielāks par 0.
+Sākumā summa ir 0.
+Ar for ciklu programma pieskaita skaitļus no 1 līdz n.
+Beigās programma parāda summu.
+
 
 ## 2. Izpildes izsekošana
 
@@ -245,10 +256,14 @@ Izvēlies vienu konkrētu ievadi un pieraksti mainīgo vērtības pa soļiem.
 
 ```markdown
 | Solis | Nosacījums | Mainīgie pirms | Veiktā darbība | Mainīgie pēc | Izvade |
-|------:|------------|-----------------|----------------|----------------|--------|
-| 0     | —          |                 | Sākums         |                |        |
-| 1     |            |                 |                |                |        |
-| 2     |            |                 |                |                |        |
+|------:|------------|----------------|----------------|---------------|--------|
+| 0 | — | — | Ievada skaitli 3 | n = 3 | — |
+| 1 | n <= 0: nē | n = 3 | Izpilda else un piešķir summa = 0 | n = 3, summa = 0 | — |
+| 2 | Ciklā i = 1 | n = 3, summa = 0 | summa = 0 + 1 | n = 3, i = 1, summa = 1 | — |
+| 3 | Ciklā i = 2 | n = 3, i = 1, summa = 1 | summa = 1 + 2 | n = 3, i = 2, summa = 3 | — |
+| 4 | Ciklā i = 3 | n = 3, i = 2, summa = 3 | summa = 3 + 3 | n = 3, i = 3, summa = 6 | — |
+| 5 | Cikls beidzies | n = 3, i = 3, summa = 6 | Izvada summu | n = 3, i = 3, summa = 6 | Summa: 6 |
+
 ```
 
 ## 3. Testa piemēri
@@ -258,10 +273,12 @@ Izveido vismaz četrus atšķirīgus testus.
 ```markdown
 | Testa veids | Ievade | Sagaidāmais rezultāts | Faktiskais rezultāts | Tests izturēts? |
 |-------------|--------|-----------------------|---------------------|-----------------|
-| Tipisks     |        |                       |                     |                 |
-| Robežgadījums |      |                       |                     |                 |
-| Tukša vai nederīga ievade | |                 |                     |                 |
-| Papildu tests |      |                       |                     |                 |
+| Tipisks | 5 | Summa: 15 | | |
+| Robežgadījums | 1 | Summa: 1 | | |
+| Nederīga ievade | 0 | Kļūda: skaitlim jābūt lielākam par 0. | | |
+| Papildu tests | -2 | Kļūda: skaitlim jābūt lielākam par 0. | | |
+| Tukša ievade | Tukša rinda | Kļūda: ievadi veselu skaitli. | | |
+| Nederīga ievade | abc | Kļūda: ievadi veselu skaitli. | | |
 ```
 
 ## 4. Kļūda, pretpiemērs vai uzlabojums
@@ -269,6 +286,15 @@ Izveido vismaz četrus atšķirīgus testus.
 Ja tests atklāj kļūdu, pieraksti ievadi, sagaidāmo rezultātu, faktisko rezultātu, kļūdas cēloni un labojumu.
 
 Ja programma visus testus iztur, izvēlies agrāku kļūdainu `commit` vai paskaidro, kura ievade radītu kļūdu bez vienas no tavām pārbaudēm.
+
+
+
+Sagaidāmais rezultāts: Saprotams kļūdas paziņojums.
+Bez try-except ValueError konstrukcijas programma avarētu ar ValueError, jo funkcija int() nevar pārveidot burtus veselā skaitlī.
+Tā vietā programma parāda paziņojumu: „Kļūda: ievadi veselu skaitli.”
+Pretpiemērs (nulle vai negatīvs skaitlis): Lietotājs ievada 0 vai negatīvu skaitli.
+Bez nosacījuma n <= 0 pārbaudes cikls nenotiktu un programma izvadītu „Summa: 0”.
+Tā kā uzdevumā ir prasīts tikai pozitīvs skaitlis, programma šajā gadījumā izvada atbilstošu kļūdas paziņojumu.
 
 **Ieteiktais commit:** `Pievienots algoritms un tā testi`
 
